@@ -1,15 +1,24 @@
-import express, { Express } from "express";
-import 'dotenv/config'
+import express from "express";
+import 'dotenv/config';
+import webRoutes from "./routes/web";
 
 const app = express();
-const PORT = process.env.PORT || 8181
+const PORT = process.env.PORT || 8181;
 
+// config view engine
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 
-app.get('/', (req, res) => {
-    res.send("Hello Node")
-})
+//config req.body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// config static file (img, css, js)
+app.use(express.static('public'));
+
+// config router (Always at the end of config app)
+webRoutes(app);
 
 app.listen(PORT, () => {
     console.log(`App run at ${PORT}`);
-
-})
+});

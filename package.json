@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-pro-hoidanit",
+  "name": "nodejs-express",
   "version": "1.0.0",
-  "description": "Dự án Node.js MVC theo khóa học Hỏi Dân IT",
+  "description": "Dự án Node.js MVC express basic",
   "main": "dist/app.js",
   "type": "commonjs",
   "scripts": {
@@ -28,15 +28,18 @@
   "author": "THEANH",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^6.9.0",
     "dotenv": "16.4.7",
     "ejs": "3.1.10",
-    "express": "5.0.1"
+    "express": "5.0.1",
+    "mysql2": "^3.14.1"
   },
   "devDependencies": {
     "@types/ejs": "3.1.5",
     "@types/express": "5.0.0",
     "@types/node": "22.10.7",
     "nodemon": "3.1.9",
+    "prisma": "6.9.0",
     "ts-node": "10.9.2",
     "typescript": "5.7.3"
   }
