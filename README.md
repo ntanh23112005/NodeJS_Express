@@ -1,6 +1,9 @@
 # NODE JS - EXPRESS Basic For NewBie
 
 Sử dụng NodeJS - Express - TypeScript - ORM ( Prisma, Mongoose) - Database: MySQL, MongoDB
+MÔ TẢ DỰ ÁN:
+- CRUD cơ bản với SSR ( Server Side Rendering) với Template Engine EJS + Bootstrap
+- RestfulAPI căn bản: UPDATE SAU
 
 ## Cách sử dụng:
 - QUAN TRỌNG: "npm i" để tải package, có warning thì kệ
