@@ -16,6 +16,10 @@
 <body>
     <div class="container">
         <div style="width: 600px; margin: auto;" class="p-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Create User</li>
+            </ol>
             <h2 class="text-center">Create new User</h2>
             <form action="/create-user" method="post">
                 <div class="my-3">
@@ -29,12 +33,40 @@
                         <input name="email" type="email" class="form-control" placeholder="abc123@gmail.com">
                     </div>
                 </div>
+                <div class="form-floating my-3">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <% roles.forEach((role,index)=> { %>
+                            <option value="<%-role.id %>">
+                                <%- role.name %>
+                            </option>
+                            <%})%>
+                    </select>
+                    <label for="floatingSelect">ROLE</label>
+                </div>
+
+                <div class="my-3">
+                    <!-- use for upload image and preview -->
+                    <input class="form-control mb-5" type="file" accept="image/*" onchange="loadFile(event)">
+                    <img id="output" style="width: 200px; height: auto;" />
+                </div>
+
                 <div class="my-3">
                     <button type="submit" class="btn btn-primary w-100">Create User</button>
                 </div>
             </form>
         </div>
     </div>
+
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function () {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
+    </script>
 </body>
 
 </html>

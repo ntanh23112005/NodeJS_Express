@@ -12,4 +12,14 @@ model User {
   id    Int    @id @default(autoincrement())
   email String @unique(map: "User_email_key")
   name  String
+
+  @@map("users")
+}
+
+model Role {
+  id          Int    @id
+  name        String @unique(map: "User_Role_Key")
+  description String
+
+  @@map("roles")
 }

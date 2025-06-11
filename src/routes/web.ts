@@ -1,5 +1,6 @@
 import express, { Express } from 'express';
 import { getCreateUserPage, getHomePage, getViewUserPage, postCreateUser, postDeleteUser, postUpdateUser } from '../controllers/UserController'
+import { handleGetAllRole } from '../controllers/RoleController';
 
 const router = express.Router();
 
@@ -10,6 +11,9 @@ const webRoutes = (app: Express) => {
     router.post('/delete-user/:id', postDeleteUser);
     router.get('/view-user/:id', getViewUserPage);
     router.post('/update-user/', postUpdateUser);
+
+    //role route
+    app.get('/create-user', handleGetAllRole);
 
     app.use('/', router);
 }

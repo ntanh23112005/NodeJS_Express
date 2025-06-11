@@ -16,6 +16,10 @@
 <body>
     <div class="container">
         <div style="width: 600px; margin: auto;" class="p-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">View and Update</li>
+            </ol>
             <h2 class="text-center">Update User</h2>
             <form action="/update-user" method="post">
                 <input name="id" type="hidden" value="<%= user.id%>">
